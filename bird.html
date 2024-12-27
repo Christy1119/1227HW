@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cats</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+</head>
+<style>
+    body{
+          background-color: #dae6ef;
+          color: black;
+        }
+#imgcathead{
+          height: 70vh;
+          width: 100%;
+          object-fit: cover;
+          object-position: center;
+          background-color: rgba(0, 0, 0, 0.2);
+          }
+.card1 {
+  height: 250px;
+  background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.card-body {
+    max-height: 250px;
+    overflow-y: auto;
+}
+.timeline {
+  border-left: 4px solid #ddd;
+  padding-left: 20px;
+  list-style: none;
+}
+.timeline li {
+  margin-bottom: 20px;
+  position: relative;
+  padding-left: 20px;
+}
+.timeline li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.5rem;
+  color: #007BFF;
+}
+.testimonial-carousel {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+.quote-box {
+            background-color: #f9f9f9;
+            border: 1px solid #e5e5e5;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 500px;
+            max-height: 400px;
+            position: relative;
+            font-size: 16px;
+            color: #555;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+.quote-box .quote-icon {
+            color: #5bc0de;
+            font-size: 20px;
+        }
+.quote-box p {
+            margin: 0;
+            font-style: italic;
+            line-height: 1.6;
+        }
+.user-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 15px;
+        }
+.user-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border: 2px solid #ddd;
+        }
+.user-info h5 {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 5px 0 2px;
+            color: #333;
+        }
+.user-info p {
+            font-size: 14px;
+            color: #777;
+        }
+.accordion .card:nth-of-type(odd) {
+    background-color: #fae3e4;
+}
+.accordion .card:nth-of-type(even) {
+    background-color: #fdebeb;
+}
+        
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#cad9e0">
+        <a class="navbar-brand" href="#">Chris</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="1226HW.html">主頁 </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="cat.html">貓咪</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="bird.html">鳥類<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="dog.html">狗狗</a>
+            </li>
+          </ul>
+        </div>
+  </nav>
+
+  <img class="d-block" src="birdhead.jpg" id="imgcathead" alt="">
+
+  <div class="container mt-4">
+    <h2 class="text-center mb-4"> &#128038;常見的鳥類品種花色&#128038; </h2>
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card1">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="nymphicus.jpg" class="card-img" alt="玄鳳鸚鵡">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">玄鳳鸚鵡</h5>
+                            <button class="btn btn-primary btn-sm mb-2" onclick="document.getElementById('audio-nymphicus').play()">播放鳥叫聲</button>
+                            <audio id="audio-nymphicus" src="birdvoice1.mp3"></audio>
+                            <p class="card-text">是世界上<b>最常見的鸚鵡之一</b>，也是國內最普遍的中型鸚鵡。價位合理、繁殖數量多使得它們相當的普遍，手養幼鳥<b>溫順活潑，喜愛親近主人</b>，是不錯的選擇寵物鳥。
+                              玄鳳鸚鵡那獨特的鮮黃色頭冠會在受驚或興奮時豎起，而它們平常放鬆時頭冠就會微微傾斜，若緊貼頭部時則是生氣或自衛時。個性溫馴、乖巧又很容易照顧，因此廣受歡迎而成為流行的寵物鳥。但有卻相當的神經質，個別膽小容易受驚嚇，一點驚動就會使它們陷入恐慌之中，它們情緒會隨冠羽變化。叫聲清脆響亮似吹口哨，給人以空曠、荒涼之感。</p>
+                              <p class="card-text"><small class="text-muted"><a href="https://iparrot.com.tw/blog/2019/04/18/%E7%8E%84%E9%B3%B3%E9%B8%9A%E9%B5%A1%E9%A3%BC%E9%A4%8A%E8%88%87%E9%9B%8C%E9%9B%84%E7%8E%84%E9%B3%B3%E9%B8%9A%E9%B5%A1%E9%91%91%E5%88%A5/">點我看更多</a></small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card1">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="finch.jpg" class="card-img" alt="文鳥">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">文鳥</h5>
+                            <button class="btn btn-primary btn-sm mb-2" onclick="document.getElementById('audio-finch').play()">播放鳥叫聲</button>
+                            <audio id="audio-finch" src="birdvoice2.mp3"></audio>
+                            <p class="card-text">文鳥為最熱門的小型手養雀類，紅紅的嘴喙及穠纖合度的體態，擁有<b>開朗活潑又親人</b>的個性，更能訓練其聽到名字就能叫喚至身邊，這樣豐富互動的伴侶特質深深擄獲每個人的心。
+                              文鳥體質強健<b>容易飼育</b>，喜歡親近人也很愛沐浴，但強勢的牠們適合與其他鳥類分開生活，避免紛爭不斷。</p>
+                            <p class="card-text"><small class="text-muted"><a href="https://hamsterswiki.blogspot.com/2013/09/Mannikin.html#4">點我看更多</a></small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card1">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="swallow.jpg" class="card-img" alt="家燕">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">家燕</h5>
+                            <button class="btn btn-primary btn-sm mb-2" onclick="document.getElementById('audio-swallow').play()">播放鳥叫聲</button>
+                            <audio id="audio-swallow" src="birdvoice3.mp3"></audio>
+                            <p class="card-text">家燕是一種善於飛翔的鳥類，身姿靈活自如、飛行速度快速。仔細觀察不難發現燕子時常在高速飛行中急轉方向或巧妙地避開障礙物，也很擅長低空飛行。有一說法「燕子低飛」代表要下雨了，因為燕子能夠一邊飛翔、一邊補食昆蟲，當快下雨時，空氣中的水分增加，溼氣會造成蟲子不易飛行，只能在貼近地面的低處行動，而為了覓食的家燕，也就跟著有了低空飛行的舉動。
+                              自古燕子就是<b>福氣的象徵</b>，中國人相信燕子是具有靈性的動物，被其選中築巢的那戶人家，燕子會為他們捎來幸福與財富。對於農民而言，燕子能夠補食殘害農作物的害蟲，甚至是人們討厭的蚊蠅，這樣說來，燕子的確是對人們有幫助的益鳥。
+                            </p>
+                            <p class="card-text"><small class="text-muted"><a href="https://www.watchinese.com/article/2022/26100">點我看更多</a></small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card1">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="canary.jpg" class="card-img" alt="金絲雀">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">金絲雀</h5>
+                            <button class="btn btn-primary btn-sm mb-2" onclick="document.getElementById('audio-canary').play()">播放鳥叫聲</button>
+                            <audio id="audio-canary" src="birdvoice4.mp3"></audio>
+                            <p class="card-text">金絲雀是一種非常愛護羽毛的小型鳥，所以每天會<b>花大量的時間清理羽毛、喙、腳爪</b>等，如果許可應該要<b>定時提供乾淨的水盆</b>讓牠洗澡。野生的金絲雀每天會飛行很長的路程去尋找食物，如果空間不允許無法讓牠出籠子運動，可以在籠內的各處擺放各種點心及蔬果引起牠的興趣，也可以偶爾改變籠內的布置(放置鳥玩具的位置)刺激牠活動(牠們喜愛的玩具如盪鞦韆及繩索等)。若飼養多隻金絲雀，你會發現牠們之間有很多互動也有很多競爭，但是如果只飼養單一個體，你及家人的陪伴對牠來說就會很重要。
+                              不可以提供的有毒食物：番茄綠色部份、生的馬鈴薯、葡萄柚、梅子、李子、綠豆都不建議給金絲雀食用。
+                            </p>
+                            <p class="card-text"><small class="text-muted"><a href="https://ispet.com.tw/portfolio-item/canary/#tab-id-2">點我看更多</a></small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <div class="card1">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="psittacus.jpg" class="card-img" alt="非洲灰鸚鵡">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">非洲灰鸚鵡</h5>
+                        <button class="btn btn-primary btn-sm mb-2" onclick="document.getElementById('audio-psittacus').play()">播放鳥叫聲</button>
+                        <audio id="audio-psittacus" src="birdvoice5.mp3"></audio>
+                        <p class="card-text">灰鸚鵡的優點及缺點就是<b>很愛講話</b>，話癆魂一來就會叨個不停，<b>說話學習力可說是非常驚人</b>，只要有足夠的耐心教導，基本上都還會和你做簡單的接龍互動。除此之外，灰鸚鵡羽粉非常多，可能抖一下羽毛，空氣中就會有羽粉降落。只要像照顧自己的小孩子一樣，用心地去對待灰鸚鵡並且做好功課，都是可以克服的。</p>
+                        <p class="card-text"><small class="text-muted"><a href="https://vocus.cc/article/64ef6d63fd8978000148c4a8">點我看更多</a></small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="card1">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="callduck.jpg" class="card-img" alt="柯爾鴨">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">柯爾鴨</h5>
+                        <button class="btn btn-primary btn-sm mb-2" onclick="document.getElementById('audio-callduck').play()">播放鳥叫聲</button>
+                        <audio id="audio-callduck" src="birdvoice6.mp3"></audio>
+                        <p class="card-text">柯爾鴨相較其他鴨子<b>沒有明顯體味</b>，適合養在室內。牠們也不像普通鴨子頻繁掉毛，且會自己理毛，在環境整理上方便許多。柯爾鴨性格溫順友善，容易與人親近，牠們<b>喜愛游泳和洗澡</b>。柯爾鴨的高智商使牠們能夠記住自己的主人，這種高互動性的反應讓牠們成為受歡迎的寵物之一。
+                        </p>
+                        <p class="card-text"><small class="text-muted"><a href="https://magiccloud.i234.me/archives/15544">點我看更多</a></small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      </div>
+      </div>
+</div>
+
+<div class="container mt-5">
+  <h2 class="text-center mb-4">&#128038;鳥類飼養指南&#128038;</h2>
+  <div class="row">
+      <div class="col-md-6">
+          <ul class="timeline">
+              <li>
+                  <h5>步驟一：<b>準備居住環境</b></h5>
+                  <p>提供寬敞、安全且通風的籠子，避免直射陽光與強風。</p>
+              </li>
+              <li>
+                  <h5>步驟二：<b>飲食均衡</b></h5>
+                  <p>餵食適合的飼料，搭配水果、蔬菜，避免有毒食物。</p>
+              </li>
+              <li>
+                  <h5>步驟三：<b>清潔衛生</b></h5>
+                  <p>定期清理鳥籠與飲水器，維持清潔健康。</p>
+              </li>
+          </ul>
+      </div>
+      <div class="col-md-6">
+          <ul class="timeline">
+              <li>
+                  <h5>步驟四：<b>活動需求</b></h5>
+                  <p>提供籠外活動與玩具，滿足運動與探索需求。</p>
+              </li>
+              <li>
+                  <h5>步驟五：<b>光照管理</b></h5>
+                  <p>每日接觸適量自然光或UVB燈光，促進健康。</p>
+              </li>
+              <li>
+                  <h5>步驟六：<b>健康檢查</b></h5>
+                  <p>健康檢查：定期觀察行為與體態異常，必要時就醫檢查。</p>
+              </li>
+          </ul>
+      </div>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <h2 class="text-center mb-4">&#128038;常見問題回答&#128038;</h2>
+  <div class="accordion" id="faqAccordion">
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h5 class="mb-0">
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne">
+            Q：我家鸚鵡不洗澡，需要幫牠洗嗎？
+          </button>
+        </h5>
+      </div>
+
+      <div id="collapseOne" class="collapse" data-parent="#faqAccordion">
+        <div class="card-body">
+          有些品種的鸚鵡真的很愛洗澡，吸蜜鸚鵡就是一例，但也有超不愛洗澡的鸚鵡像是非洲灰鸚鵡，洗澡的頻率、愛不愛洗澡可能跟牠們的原生地氣候相關喔。其實鳥<b>不常洗澡通常不會有太大的影響</b>，比起洗澡更應該關心的是羽毛的光澤、型態、整齊度，而不是洗澡的次數。
+        </div>
+      </div>
+
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h5 class="mb-0">
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo">
+            Q：鳥類需要每天放出籠子活動嗎？?
+          </button>
+        </h5>
+      </div>
+
+      <div id="collapseTwo" class="collapse" data-parent="#faqAccordion">
+        <div class="card-body">
+          是的，大多數鳥類每天需要放出籠子<b>1到2小時以上</b>。這能讓牠們自由伸展翅膀、鍛鍊身體、探索環境，也有助於減少無聊和壓力。如果無法監控，請確保活動空間安全，避免牠們接觸到電線、植物或其他有害物品。
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" id="headingThree">
+        <h5 class="mb-0">
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseThree">
+            Q：鳥籠需要多大的空間？
+          </button>
+        </h5>
+      </div>
+
+      <div id="collapseThree" class="collapse" data-parent="#faqAccordion">
+        <div class="card-body">
+          鳥籠的大小應該根據鳥類的品種而定，但至少要讓鳥類能夠展翅飛翔且轉身自如。例如，小型鳥類如虎皮鸚鵡需要的籠子最小尺寸為50×50×75公分，而中大型鳥類如灰鸚鵡至少需要90×60×120公分的空間。同時，籠內應放置棲木、玩具和食水器以滿足日常需求。
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" id="headingFour">
+        <h5 class="mb-0">
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseFour">
+            Q：鳥類如何保持羽毛健康？
+          </button>
+        </h5>
+      </div>
+
+      <div id="collapseFour" class="collapse" data-parent="#faqAccordion">
+        <div class="card-body">
+          鳥類需要健康的羽毛來飛行和保暖。為了維護羽毛健康需定期淋浴或噴霧：每週讓鳥類享受輕微的淋浴，有助於保持羽毛清潔和濕潤並提供含有蛋白質、維生素A和omega-3脂肪酸的食物，這些營養素對羽毛生長至關重要。
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" id="headingFive">
+        <h5 class="mb-0">
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseFive">
+            Q：如何讓鳥類學會簡單的指令或說話？
+          </button>
+        </h5>
+      </div>
+
+      <div id="collapseFive" class="collapse" data-parent="#faqAccordion">
+        <div class="card-body">
+          鳥類（如鸚鵡）可以學習簡單指令或模仿聲音。包括重複簡單詞句，例如「你好」或配合手勢或道具來增強記憶。當牠模仿成功時，給予喜愛的食物或撫摸作為獎勵。
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" id="headingSix">
+        <h5 class="mb-0">
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseSix">
+            Q：能飼養不同品種的鳥在同一個籠子裡嗎？
+          </button>
+        </h5>
+      </div>
+
+      <div id="collapseSix" class="collapse" data-parent="#faqAccordion">
+        <div class="card-body">
+          通常<b>不建議</b>，因為不同品種的鳥類可能有不同的習性、需求和社交行為。例如，大型鳥類可能傷害小型鳥類。即使是同一品種，也需要確保籠子有足夠空間，並監控牠們的互動。
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" id="headingSeven">
+        <h5 class="mb-0">
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseSeven">
+            Q：鳥類會掉毛嗎？
+          </button>
+        </h5>
+      </div>
+
+      <div id="collapseSeven" class="collapse" data-parent="#faqAccordion">
+        <div class="card-body">
+          是的，鳥類會自然換羽，<b>每年通常有1到2次換羽期</b>。這是正常現象，但如果出現過度掉毛或啄毛反映需要特別注意，可能是壓力、營養不良、寄生蟲感染或環境單調、無聊等心理壓力導致。
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5 testimonial-carousel">
+  <h2 class="text-center mb-4">&#128038;經驗分享&#128038;</h2>
+  <div id="testimonialCarousel" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+
+          <div class="carousel-item active">
+              <div class="quote-box">
+                  <p>
+                      <i class="fas fa-quote-left quote-icon"></i>
+                      「Daisy(非洲灰鸚鵡)超聰明，牠能模仿門鈴聲，還學會說『晚安』。牠需要大量的智力刺激和互動，不然會變得無聊。如果你是非常有耐心的人，很推薦養這品種，因為牠們容易焦慮。如果你每天陪伴和訓練牠，那牠會成為你的忠實朋友。」
+                      <i class="fas fa-quote-right quote-icon"></i>
+                  </p>
+                  <div class="user-info">
+                      <img src="birdshare1.jpg" alt="User 1" class="user-img">
+                      <h5>李媽媽</h5>
+                      <p>養鳥12年</p>
+                  </div>
+              </div>
+          </div>
+
+          <div class="carousel-item">
+              <div class="quote-box">
+                  <p>
+                      <i class="fas fa-quote-left quote-icon"></i>
+                      「可可(柯爾鴨)非常親人，每天都會跟著我走來走去，像隻小狗一樣。牠很喜歡水，需要準備一個小池子讓牠洗澡，非常可愛！不過牠的排泄量大，鴨舍需要每天清理!」
+                      <i class="fas fa-quote-right quote-icon"></i>
+                  </p>
+                  <div class="user-info">
+                      <img src="birdshare2.jpg" alt="User 2" class="user-img">
+                      <h5>花蓮阿信</h5>
+                      <p>養鴨5年</p>
+                  </div>
+              </div>
+          </div>
+
+          <div class="carousel-item">
+              <div class="quote-box">
+                  <p>
+                      <i class="fas fa-quote-left quote-icon"></i>
+                      「踩踩(文鳥)的色彩非常吸引人，性格溫順又不怕人。我喜歡在下午時讓牠們自由飛翔，看牠們啄食水果，真的很療癒。不過，牠們的籠子需要每天清理。如果你是忙碌的人不建議飼養。」
+                      <i class="fas fa-quote-right quote-icon"></i>
+                  </p>
+                  <div class="user-info">
+                      <img src="birdshare3.jpeg" alt="User 3" class="user-img">
+                      <h5>陳小姐</h5>
+                      <p>養鳥1年</p>
+                  </div>
+              </div>
+          </div>
+
+          <div class="carousel-item">
+              <div class="quote-box">
+                  <p>
+                      <i class="fas fa-quote-left quote-icon"></i>
+                      「太陽(玄鳳鸚鵡)是一個愛唱歌的小明星！每天早上都會發出悅耳的哨音，彷彿在向我們說早安。牠的性格很溫和，也很喜歡互動。特別愛叼小鈴鐺！」
+                      <i class="fas fa-quote-right quote-icon"></i>
+                  </p>
+                  <div class="user-info">
+                      <img src="birdshare4.jpg" alt="User 4" class="user-img">
+                      <h5>Christina Pan</h5>
+                      <p>養鳥8年</p>
+                  </div>
+              </div>
+          </div>
+
+          <div class="carousel-item">
+              <div class="quote-box">
+                  <p>
+                      <i class="fas fa-quote-left quote-icon"></i>
+                      「YY(家燕)真是優雅的小鳥！牠們喜歡在陽光下飛翔，觀察牠們築巢是種享受。YY對我家陽台特別感興趣，經常回來築巢。唯一的挑戰是牠們的糞便需要經常清理，但看牠們忙碌飛舞實在讓人心情愉悅！」
+                      <i class="fas fa-quote-right quote-icon"></i>
+                  </p>
+                  <div class="user-info">
+                      <img src="birdshare5.jpg" alt="User 5" class="user-img">
+                      <h5>石小姐</h5>
+                      <p>養鳥2年</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <a class="carousel-control-prev" href="#testimonialCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#testimonialCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+      </a>
+  </div>
+</div>
+
+
+
+<footer class="text-center text-lg-start" style="background-color: #e8e9eaf0; padding: 10px;">
+<div class="container p-2">
+    <div class="row d-flex justify-content-around">
+      <div class="col-auto mb-4">
+        <h5 class="text-uppercase"><a href="1226HW.html">主頁</a></h5>
+      </div>
+    
+      <div class="col-auto mb-4">
+        <h5 class="text-uppercase mb-0"><a href="cat.html">貓咪</a></h5>
+      </div>
+      
+      <div class="col-auto mb-4">
+        <h5 class="text-uppercase"><a href="dog.html">狗狗</a></h5>
+      </div>
+      
+      <div class="col-auto mb-4">
+        <h5 class="text-uppercase mb-0"><a href="bird.html">鳥類</a></h5>
+      </div>
+
+    </div>
+
+</div>
+  
+
+
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2020 Copyright:
+    <a class="text-body" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+  </div>
+
+</footer>
+  
+</body>
+</html>
