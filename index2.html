@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cats</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+</head>
+<style>
+body{
+          background-color: #dae6ef;
+          color: black;
+        }
+#imgcathead{
+          height: 70vh;
+          width: 100%;
+          object-fit: cover;
+          object-position: center;
+          background-color: rgba(0, 0, 0, 0.2);
+          }
+.timeline {
+  border-left: 4px solid #ddd;
+  padding-left: 20px;
+  list-style: none;
+}
+.timeline li {
+  margin-bottom: 20px;
+  position: relative;
+  padding-left: 20px;
+}
+.timeline li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.5rem;
+  color: #007BFF;
+}
+.testimonial-carousel {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+.quote-box {
+            background-color: #f9f9f9;
+            border: 1px solid #e5e5e5;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 500px;
+            max-height: 400px;
+            position: relative;
+            font-size: 16px;
+            color: #555;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+.quote-box .quote-icon {
+            color: #5bc0de;
+            font-size: 20px;
+        }
+.quote-box p {
+            margin: 0;
+            font-style: italic;
+            line-height: 1.6;
+        }
+.user-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 15px;
+        }
+.user-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border: 2px solid #ddd;
+        }
+.user-info h5 {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 5px 0 2px;
+            color: #333;
+        }
+.user-info p {
+            font-size: 14px;
+            color: #777;
+        }
+.accordion .card:nth-of-type(odd) {
+    background-color: #fae3e4;
+}
+.accordion .card:nth-of-type(even) {
+    background-color: #fdebeb;
+}
+.card1 {
+  height: 250px;
+  background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.card-body {
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#cad9e0">
+        <a class="navbar-brand" href="#">Chris</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="1226HW.html">主頁 </a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="cat.html">貓咪<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="bird.html">鳥類</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="dog.html">狗狗</a>
+            </li>
+          </ul>
+        </div>
+  </nav>
+
+  <img class="d-block" src="cathead.jpg" id="imgcathead" alt="">
+
+  <div class="container mt-4">
+    <h2 class="text-center mb-4">&#x1F43E; 常見的貓咪品種花色 &#x1F43E;</h2>
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card1">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="ragdoll.jpg" class="card-img" alt="布偶貓">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">布偶貓</h5>
+                            <p class="card-text">布偶貓是一個擁有<b>溫馴性格</b>和可愛外貌的品種，和其他貓貓比較不一樣，布偶貓會完全放鬆躺在人身上，不會瘋狂掙扎或逃跑，對人很親暱、沒有戒心，就像是一個大型布娃娃一般，因此也被稱作布娃娃貓或布拉多爾貓。
+                              布偶貓眼睛大而橢圓形，眼瞳以深藍色為標準。</p>
+                              <p class="card-text"><small class="text-muted"><a href="https://www.halopets.com.tw/blog/posts/ragdoll">點我看更多</a></small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card1">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="tabby cat.jpeg" class="card-img" alt="虎斑貓">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">虎斑貓</h5>
+                            <p class="card-text">虎斑貓為咖啡色、橘、黑、白交織成條紋狀毛色的米克斯貓，看起來很帥氣、有野性美。虎斑貓的<b>性格通常比較獨立、警戒、火爆，不容易親近陌生人或其他動物</b>，喜歡在暗處觀察周圍的情況。虎斑貓的體型健壯、運動神經強。</p>
+                            <p class="card-text"><small class="text-muted"><a href="https://vocus.cc/article/64d4e99afd89780001baa3f0">點我看更多</a></small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card1">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="ginger cat.jpg" class="card-img" alt="橘貓">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">橘貓</h5>
+                            <p class="card-text">橘貓是全身70%到80%以上是橘色的米克斯貓。大部分的橘貓都是公貓。橘貓有著<b>易胖體質</b>，對食物沒有太多挑剔，<b>需特別注意飲食控制和運動</b>。橘貓的性格通常比較勇敢、好奇、聰明、活潑，喜歡探索新事物和玩耍。</p>
+                            <p class="card-text"><small class="text-muted"><a href="https://vocus.cc/article/64af896efd89780001132101">點我看更多</a></small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card1">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="tuxedo.jpg" class="card-img" alt="賓士貓">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">賓士貓</h5>
+                            <p class="card-text">賓士貓(乳牛貓)的毛色像乳牛一樣黑白相間，其中賓士貓是指頭頂和眼睛周圍是黑色，鼻子和嘴巴是白色，就像賓士汽車的標誌一樣。
+                              外表看起來帥氣有型，但其實性格非常有趣搞笑，被稱為<b>貓界哈士奇</b>，帶有一點狗狗的氣息。賓士貓特別聰明、性格活潑、鬼靈精怪，喜歡調皮搗蛋、翻箱倒櫃，也非常喜歡與人互動，懂得撒嬌討好飼主。</p>
+                            <p class="card-text"><small class="text-muted"><a href="https://vocus.cc/article/673c0909fd89780001dd5557">點我看更多</a></small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <div class="card1">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="maine.jpg" class="card-img" alt="緬因貓">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">緬因貓</h5>
+                        <p class="card-text">緬因貓是一種體型巨大、具有豐富毛髮的貓咪品種，而且是<b>體型最大的其中一種貓咪品種</b>。據統計，最重甚至可達20磅之多。緬因貓的外觀特徵包括雙色或多色的斑紋，眼睛通常呈現橄欖形狀。雖然他們體型龐大，但性格溫和友善，並且對小孩和其他寵物通常友善和包容，因此緬因貓友好和穩重的性格使其成為一種<b>非常適合家庭</b>的寵物。</p>
+                        <p class="card-text"><small class="text-muted"><a href="https://www.sofydog.com/tw/SofyDOG/blog-detail/Maine-Coon-cat/?srsltid=AfmBOoppmg5UJHxRhbY0_nSW-U0da8c3rl3pnP3hkNlouBE9kFq3dgHZ">點我看更多</a></small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="card1">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="siamese cat.jpg" class="card-img" alt="暹羅貓">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">暹羅貓</h5>
+                        <p class="card-text">暹羅貓是世界最古老的貓品種之一，有著咖啡色煙燻的臉、四肢、與尾巴。
+                          暹羅貓的<b>重點色會隨著年紀增長越來越明顯</b>。在剛出生的幼貓時期，毛色都呈現淺白色或奶油色，大約到一個月大時，轉成深色毛的區域就慢慢顯現，就因為長大後花色不同，暹羅貓常常被戲稱為真正的「詐騙集團」。此外，生活環境的<b>溫度當然也會影響毛色的呈現度</b>，生活在寒冷氣候的暹羅貓，毛色就會比熱帶氣候的貓還要更深更明顯。
+                        </p>
+                        <p class="card-text"><small class="text-muted"><a href="https://www.catraws.com/breed/siamese-cat/">點我看更多</a></small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      </div>
+      </div>
+</div>
+
+
+
+  
+<div class="container mt-5">
+  <h2 class="text-center mb-4">&#x1F43E;貓咪飼養指南&#x1F43E;</h2>
+  <div class="row">
+      <div class="col-md-6">
+          <ul class="timeline">
+              <li>
+                  <h5>步驟一：<b>準備居住環境</b></h5>
+                  <p>提供舒適的活動空間，準備貓抓柱、貓砂盆等基本生理用品。</p>
+              </li>
+              <li>
+                  <h5>步驟二：<b>飲食需求</b></h5>
+                  <p>選擇高品質飼料，並提供乾淨的水源，若罐頭在室溫下放至2至4小時未吃完則不建議再讓貓咪食用。</p>
+              </li>
+              <li>
+                  <h5>步驟三：<b>健康檢查</b></h5>
+                  <p>帶貓咪進行疫苗接種及定期健康檢查。</p>
+              </li>
+          </ul>
+      </div>
+      <div class="col-md-6">
+          <ul class="timeline">
+              <li>
+                  <h5>步驟四：<b>社交與活動</b></h5>
+                  <p>與貓咪互動，提供玩具以刺激他們的好奇心及培養與飼主的感情。</p>
+              </li>
+              <li>
+                  <h5>步驟五：<b>做好窗戶防護措施</b></h5>
+                  <p>針對門、窗設置適當的防護措施，住在高樓層的飼主須特別注意門窗穩定度，避免貓咪因好奇而不慎墜樓。</p>
+              </li>
+              <li>
+                  <h5>步驟六：<b>觀察行為</b></h5>
+                  <p>觀察貓咪的體型、飲食、喝水量、活動力等變化，注意健康狀況。</p>
+              </li>
+          </ul>
+      </div>
+  </div>
+</div>
+
+
+  <div class="container mt-5">
+    <h2 class="text-center mb-4">&#x1F43E;常見問題回答&#x1F43E;</h2>
+    <div class="accordion" id="faqAccordion">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne">
+              Q：貓咪需要多久洗一次澡？
+            </button>
+          </h5>
+        </div>
+
+        <div id="collapseOne" class="collapse" data-parent="#faqAccordion">
+          <div class="card-body">
+            通常不需要經常洗澡，除非貓咪身上有污漬或特殊需求。
+          </div>
+        </div>
+
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h5 class="mb-0">
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo">
+              Q：懷孕可以養貓嗎?
+            </button>
+          </h5>
+        </div>
+
+        <div id="collapseTwo" class="collapse" data-parent="#faqAccordion">
+          <div class="card-body">
+            「貓咪體內的弓形蟲會導致流產」坊間流傳養貓的禁忌讓許多懷孕的飼主只能忍痛將貓咪丟棄或轉送他人，但其實貓咪只有在首次感染時糞便裡會參雜弓形蟲卵，而且蟲卵需要經由1天的時間孵化才具備傳染性，
+            而貓咪一旦感染過弓形蟲後，身體就會自行產生抗體，即便再次感染也會快速的被體內抗體一舉殲滅。簡而言之，<b>要被貓咪感染弓形蟲的機率可說是微乎其微。</b>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" id="headingThree">
+          <h5 class="mb-0">
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseThree">
+              Q：貓咪總能完美著陸嗎?
+            </button>
+          </h5>
+        </div>
+
+        <div id="collapseThree" class="collapse" data-parent="#faqAccordion">
+          <div class="card-body">
+            相較於高空降落，當貓咪從低處落地時，因為沒有時間調整姿勢反而更容易造成扭傷、骨折等情況，有時候鏟屎官從外表是看不出貓咪已經受傷了。
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" id="headingFour">
+          <h5 class="mb-0">
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseFour">
+              Q：狗狗吃的飼料貓咪也可以吃嗎?
+            </button>
+          </h5>
+        </div>
+
+        <div id="collapseFour" class="collapse" data-parent="#faqAccordion">
+          <div class="card-body">
+            貓咪與狗狗的飼料是不太一樣的，若讓貓咪長期吃狗飼料會缺少固定的營養素，如:牛磺酸，長期下來容易造成健康上的影響!
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" id="headingFive">
+          <h5 class="mb-0">
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseFive">
+              Q：甚麼時候要帶貓咪去絕育？
+            </button>
+          </h5>
+        </div>
+
+        <div id="collapseFive" class="collapse" data-parent="#faqAccordion">
+          <div class="card-body">
+            貓咪性成熟的時間約在6個月大左右，建議飼主們可在貓咪發情前就完成絕育，除了可預防公貓亂噴尿的行為，也能降低母貓乳腺腫瘤發生的機率。此外，飼主們帶貓咪去絕育時也可以順便幫貓咪植入晶片。
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" id="headingSix">
+          <h5 class="mb-0">
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseSix">
+              Q：貓咪可以喝牛奶嗎？
+            </button>
+          </h5>
+        </div>
+
+        <div id="collapseSix" class="collapse" data-parent="#faqAccordion">
+          <div class="card-body">
+            許多飼主會餵貓咪人類喝的牛奶，但其實貓咪的腸胃無法消化牛奶內含的大量乳糖成分，容易引發消化不良、拉肚子等症狀，所以如果要給貓咪喝牛奶，請記得使用動物專用的奶粉沖泡。
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" id="headingSeven">
+          <h5 class="mb-0">
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseSeven">
+              Q：貓咪可以吃生肉嗎？
+            </button>
+          </h5>
+        </div>
+
+        <div id="collapseSeven" class="collapse" data-parent="#faqAccordion">
+          <div class="card-body">
+            現今的貓咪多為家貓，抵抗力較低，吃生肉容易導致腸胃不適、寄生蟲感染等。
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-5 testimonial-carousel">
+    <h2 class="text-center mb-4">&#x1F43E;經驗分享&#x1F43E;</h2>
+    <div id="testimonialCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+                <div class="quote-box">
+                    <p>
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        「大胖橘是我們家的快樂源泉，他的食量真的超級驚人！每次都要限制他的進食，不然他的肚子會越來越大。他非常親人，對誰都很友善，家裡來客人他第一個跑去迎接，完全沒有怕生的感覺。和他在一起，真的每天都很開心。」
+                        <i class="fas fa-quote-right quote-icon"></i>
+                    </p>
+                    <div class="user-info">
+                        <img src="share1.jpg" alt="User 1" class="user-img">
+                        <h5>王奴才</h5>
+                        <p>養貓12年</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="quote-box">
+                    <p>
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        「我們家的暹羅貓叫米米，簡直像個話匣子。她喜歡用不同的喵喵聲表達情緒，從開心到生氣都很明顯。她特別需要陪伴，有時候你稍微冷落她一會兒，她就會不開心。我最愛的是她的聰明，她學會了開櫥櫃和取玩具，真的很像個小孩！」
+                        <i class="fas fa-quote-right quote-icon"></i>
+                    </p>
+                    <div class="user-info">
+                        <img src="share2.jpg" alt="User 2" class="user-img">
+                        <h5>高雄彭于晏</h5>
+                        <p>養貓1年</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="quote-box">
+                    <p>
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        養貓之前，我以為晚上牠們會像人一樣乖乖睡覺，但我家的阿米和妮妮完全打破了這個幻想！牠們白天懶洋洋地曬太陽，到了晚上卻精力充沛得像開了派對。
+                        尤其是阿米，每晚準時在家裡上演「百米短跑」，從客廳衝到臥室，還喜歡跳上家具發出咚咚的聲響。若你是淺眠的人請考慮清楚!
+                        <i class="fas fa-quote-right quote-icon"></i>
+                    </p>
+                    <div class="user-info">
+                        <img src="share3.jpg" alt="User 3" class="user-img">
+                        <h5>陳小姐</h5>
+                        <p>養貓3年</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="quote-box">
+                    <p>
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        
+                        "I never thought two cats could have such different personalities. Leo, my ragdoll, is the ultimate cuddle buddy—always looking for a lap to nap on. 
+                        Luna, my tuxedo, is a queen with a mind of her own. She’ll demand attention one moment and then pretend I don’t exist the next."
+                        <i class="fas fa-quote-right quote-icon"></i>
+                    </p>
+                    <div class="user-info">
+                        <img src="share4.jpg" alt="User 4" class="user-img">
+                        <h5>Anna Lee</h5>
+                        <p>cat owner for years</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="quote-box">
+                    <p>
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        「我的貓品種是虎斑及緬因貓，分別叫做虎子和小茶。虎子的脾氣溫和又穩重，是個喜歡窩在沙發上的小紳士。他總是靜靜地陪在我身邊，但只要逗貓棒出現，他立刻化身追逐高手。
+                        小茶則是個活潑的小調皮鬼，好奇心旺盛，喜歡四處探險，還會用牠那甜美的聲音喵喵撒嬌，要我陪牠玩。我平常會用逗貓棒和雷射筆陪他們玩，虎子喜歡逗貓棒的柔和晃動，而小茶更愛追著雷射點到處跑，經常玩得滿頭大汗。非常大家養兩隻貓陪伴對方!」
+                        <i class="fas fa-quote-right quote-icon"></i>
+                    </p>
+                    <div class="user-info">
+                        <img src="share5.jpg" alt="User 5" class="user-img">
+                        <h5>吳先生</h5>
+                        <p>養貓7年</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#testimonialCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#testimonialCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+
+<footer class="text-center text-lg-start" style="background-color: #e8e9eaf0; padding: 10px;">
+  <div class="container p-2">
+      <div class="row d-flex justify-content-around">
+        <div class="col-auto mb-4">
+          <h5 class="text-uppercase"><a href="1226HW.html">主頁</a></h5>
+        </div>
+      
+        <div class="col-auto mb-4">
+          <h5 class="text-uppercase mb-0"><a href="cat.html">貓咪</a></h5>
+        </div>
+        
+        <div class="col-auto mb-4">
+          <h5 class="text-uppercase"><a href="dog.html">狗狗</a></h5>
+        </div>
+        
+        <div class="col-auto mb-4">
+          <h5 class="text-uppercase mb-0"><a href="bird.html">鳥類</a></h5>
+        </div>
+
+      </div>
+
+  </div>
+    
+  
+
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2020 Copyright:
+      <a class="text-body" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    </div>
+  
+</footer>
+  
+  
+  
+  
+  
+
+</body>
+</html>
